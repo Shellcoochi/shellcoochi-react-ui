@@ -1,0 +1,61 @@
+{
+  "name": "shellcoochi-react-ui",
+  "version": "1.0.0",
+  "description": "这是一个组件库",
+  "main": "index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "cpr-static": "cpr src/styles lib/styles -o && cpr src/assets lib/assets -o",
+    "build-storybook": "build-storybook",
+    "build:dev": "cross-env NODE_ENV=development webpack",
+    "build:prod": "cross-env NODE_ENV=production webpack",
+    "build:tsc": "tsc -p tsconfig.build.json --target ES5 --outDir lib",
+    "build:esm":"yarn build:tsc && yarn cpr-static",
+    "build": "yarn build:prod && yarn build:dev && yarn build:esm"
+  },
+  "author": "shellcoochi",
+  "license": "ISC",
+  "files": [
+    "dist/*",
+    "lib",
+    "index.js",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "cpr": "^3.0.1",
+    "make-dir-cli": "^3.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@storybook/addon-actions": "^6.5.7",
+    "@storybook/addon-essentials": "^6.5.7",
+    "@storybook/addon-interactions": "^6.5.7",
+    "@storybook/addon-links": "^6.5.7",
+    "@storybook/builder-webpack5": "^6.5.7",
+    "@storybook/manager-webpack5": "^6.5.7",
+    "@storybook/react": "^6.5.7",
+    "@storybook/testing-library": "^0.0.11",
+    "@types/react": "^18.0.9",
+    "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.0.0",
+    "less": "^4.1.3",
+    "less-loader": "^8.0.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.3",
+    "ts-loader": "^9.3.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
