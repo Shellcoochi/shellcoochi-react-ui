@@ -21,8 +21,8 @@
     "newLine": "lf", // 当生成文件时指定行结束符： "crlf"（windows）或 "lf"（unix）
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
+    "libs/ui/src/**/*.ts",
+    "libs/ui/src/**/*.tsx"
   ],
   "exclude": [
     "node_modules"
