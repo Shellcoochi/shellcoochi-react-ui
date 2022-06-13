@@ -1,0 +1,25 @@
+{
+  "name": "@shellcoochi/cards",
+  "version": "0.0.1",
+  "description": "cards",
+  "main": "index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "shellcoochi",
+  "license": "ISC",
+  "files": [
+    "dist/*",
+    "lib",
+    "index.js"
+  ],
+  "dependencies": {
+    "classnames": "^2.3.1"
+  },
+  "devDependencies": {
+    
+  },
+  "peerDependencies": {
+    "react": ">=18.1.0",
+    "react-dom": ">=18.1.0"
+  }
+}
