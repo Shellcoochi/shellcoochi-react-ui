@@ -10,7 +10,7 @@
   "files": [
     "dist/*",
     "lib",
-    "index.js"
+    "es"
   ],
   "dependencies": {
     "classnames": "^2.3.1"
