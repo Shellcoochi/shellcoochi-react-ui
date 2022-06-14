@@ -1,5 +1,11 @@
 # @shellcoochi/list
 
+## 0.1.2
+
+### Patch Changes
+
+- a9a5064: gg
+
 ## 0.1.1
 
 ### Patch Changes
