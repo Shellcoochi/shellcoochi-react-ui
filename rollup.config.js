@@ -97,7 +97,7 @@ libsPkgs.forEach((pkg) => {
           // 替代cssnext
           postcssPresetEnv(),
         ],
-        modules: true,
+        modules: false,//不使用css modules
         extensions: [".css", ".less"],
         process: processLess,
       }),
