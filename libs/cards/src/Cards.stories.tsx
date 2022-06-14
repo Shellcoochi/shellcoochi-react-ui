@@ -12,4 +12,5 @@ const Template = (args) => <Cards {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   children: "Default",
+  primary:false,
 };

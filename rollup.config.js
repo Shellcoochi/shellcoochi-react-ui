@@ -10,6 +10,10 @@ import typescript from "@rollup/plugin-typescript";
 import { terser } from "rollup-plugin-terser";
 import external from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
+import image from "@rollup/plugin-image";
+// import image from 'rollup-plugin-img';
+
+import copy from 'rollup-plugin-copy'
 
 const getPath = (_path) => path.resolve(__dirname, _path);
 
@@ -78,7 +82,7 @@ libsPkgs.forEach((pkg) => {
       {
         file: `./libs/${pkg}/lib/index.js`,
         format: "cjs",
-        exports: "named",/** Disable warning for default imports */
+        exports: "named" /** Disable warning for default imports */,
         sourcemap: true,
       },
     ],
@@ -88,7 +92,11 @@ libsPkgs.forEach((pkg) => {
       commonjs(),
       typescript({
         tsconfig: "./tsconfig.build.json",
-        include: [`./libs/${pkg}/src/**/*.ts`, `./libs/${pkg}/src/**/*.tsx`],
+        include: [
+          "typings.d.ts",
+          `./libs/${pkg}/src/**/*.ts`,
+          `./libs/${pkg}/src/**/*.tsx`,
+        ],
       }),
       postcss({
         plugins: [
@@ -97,12 +105,25 @@ libsPkgs.forEach((pkg) => {
           // 替代cssnext
           postcssPresetEnv(),
         ],
-        modules: false,//不使用css modules
+        modules: false, //不使用css modules
         extensions: [".css", ".less"],
         process: processLess,
       }),
       terser(),
       babel(babelOptions),
+      image(),
+      // image({
+      //   output: `./libs/${pkg}/es/assets`, // default the root
+      //   extensions: /\.(png|jpg|jpeg|gif|svg)$/, // support png|jpg|jpeg|gif|svg, and it's alse the default value
+      //   limit: 8192,  // default 8192(8k)
+      //   exclude: 'node_modules/**'
+      // }),
+       // 将不需要编译的静态文件直接复制到dist
+    copy({
+      targets: [
+        { src: `./libs/${pkg}/src/assets/**/*`, dest: `./libs/${pkg}/lib/assets` }
+      ]
+    }),
     ],
   };
   rollupConfigList.push(config);

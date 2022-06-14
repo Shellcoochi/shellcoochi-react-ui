@@ -52,6 +52,10 @@ tailPkgs.forEach((pkg) => {
     module: {
       rules: [
         {
+          test: /\.(png|jpg|gif|svg)$/i,
+          type: 'asset',
+        },
+        {
           test: /\.tsx?$/,
           use: [
             "babel-loader?cacheDirectory",

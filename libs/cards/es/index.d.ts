@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import './index.less';
+import "./index.less";
 export declare type IButtonProps = {
     onClick?: () => void;
     primary?: boolean;

@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
-import './index.less';
+import header from "./assets/head.jpg";
+import "./index.less";
 
 export type IButtonProps = {
   onClick?: () => void;
@@ -8,9 +9,9 @@ export type IButtonProps = {
   className?: string;
   style?: {};
   children?: any;
-//   style?: React.CSSProperties;
-//   children?: React.ReactNode;
-}
+  //   style?: React.CSSProperties;
+  //   children?: React.ReactNode;
+};
 
 const Cards = (props: IButtonProps) => {
   const {
@@ -31,7 +32,8 @@ const Cards = (props: IButtonProps) => {
 
   return (
     <button type="button" className={className} style={style} onClick={onClick}>
-        <h1>卡片</h1>
+      <h1>卡片</h1>
+      <img src={header} width={50} />
       <span>{children}</span>
     </button>
   );

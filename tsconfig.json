@@ -21,6 +21,7 @@
     "newLine": "lf", // 当生成文件时指定行结束符： "crlf"（windows）或 "lf"（unix）
   },
   "include": [
+    "typings.d.ts",
     "libs/**/src/**/*.ts",
     "libs/**/src/**/*.tsx"
   ],
