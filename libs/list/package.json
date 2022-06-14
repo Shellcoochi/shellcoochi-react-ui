@@ -1,6 +1,6 @@
 {
   "name": "@shellcoochi/list",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "list",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -15,9 +15,7 @@
   "dependencies": {
     "classnames": "^2.3.1"
   },
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "peerDependencies": {
     "react": ">=18.1.0",
     "react-dom": ">=18.1.0"
