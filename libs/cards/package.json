@@ -1,5 +1,5 @@
 {
-  "name": "@shellcoochi/cards",
+  "name": "@shellcoochi-test/cards",
   "version": "0.1.0",
   "description": "cards",
   "main": "lib/index.js",
