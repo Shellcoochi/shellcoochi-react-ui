@@ -21,10 +21,11 @@
     "newLine": "lf", // 当生成文件时指定行结束符： "crlf"（windows）或 "lf"（unix）
   },
   "include": [
-    "libs/ui/src/**/*.ts",
-    "libs/ui/src/**/*.tsx"
+    "libs/**/src/**/*.ts",
+    "libs/**/src/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "libs/**/src/**/*.stories.*"
   ]
 }

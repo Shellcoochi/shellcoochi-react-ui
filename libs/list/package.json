@@ -2,9 +2,9 @@
   "name": "@shellcoochi/list",
   "version": "0.0.1",
   "description": "list",
-  "main": "index.js",
-  "module": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
   "author": "shellcoochi",
   "license": "ISC",
   "files": [
