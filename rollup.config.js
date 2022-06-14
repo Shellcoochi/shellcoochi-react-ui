@@ -57,6 +57,8 @@ libsPkgs.forEach((pkg) => {
     presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-flow"],
     extensions: [".js", ".jsx", ".ts", ".tsx", ".less"],
     exclude: "**/node_modules/**",
+    babelHelpers: "runtime",
+    plugins: ["@babel/plugin-transform-runtime"],
   };
   const config = {
     input: `./libs/${pkg}/src/index.tsx`,
@@ -76,6 +78,8 @@ libsPkgs.forEach((pkg) => {
       {
         file: `./libs/${pkg}/lib/index.js`,
         format: "cjs",
+        exports: "named",/** Disable warning for default imports */
+        sourcemap: true,
       },
     ],
     plugins: [
