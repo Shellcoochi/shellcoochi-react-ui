@@ -121,7 +121,9 @@ libsPkgs.forEach((pkg) => {
        // 将不需要编译的静态文件直接复制到dist
     copy({
       targets: [
-        { src: `./libs/${pkg}/src/assets/**/*`, dest: `./libs/${pkg}/lib/assets` }
+        { src: `./libs/${pkg}/src/assets/**/*`, dest: `./libs/${pkg}/lib/assets` },
+        { src: `./libs/${pkg}/src/assets/**/*`, dest: `./libs/${pkg}/es/assets` }
+
       ]
     }),
     ],
